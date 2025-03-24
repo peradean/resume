@@ -54,13 +54,16 @@
         .scroll-text {
             position: absolute;
             color: #9B59B6;
-            font-family: 'Bubblegum Sans', cursive;
+            font-family: 'Bubblegum Sans';
             font-size: 2.5em;
             font-weight: normal;
-            text-transform: lowercase;
+            text-transform: ;
             white-space: nowrap;
             opacity: 0;
-            animation: flyby 10s linear; /* Removed 'infinite' */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: fade 2.5s linear; /* Reduced from 4s to 2.5s */
             text-shadow: 0 0 10px rgba(155, 89, 182, 0.8);
         }
 
@@ -69,31 +72,40 @@
         }
 
         #text2 {
-            animation-delay: 5s;
+            animation-delay: 2s;
         }
 
         #text3 {
-            animation-delay: 10s;
+            animation-delay: 4s;
         }
 
         #text4 {
-            animation-delay: 15s;
+            animation-delay: 8s;
         }
-#text5 {
-            animation-delay: 19s;
+      #text5 {
+            animation-delay: 10s;
         }
-
-        @keyframes flyby {
+#text6 {
+            animation-delay: 12s;
+        }
+      #text7 {
+            animation-delay: 16s;
+        }
+      #text8 {
+            animation-delay: 6s;
+        }
+        @keyframes fade {
             0% {
-                transform: translateX(100vw) translateY(50vh) rotate(-20deg);
-                opacity: 1;
+                opacity: 0;
             }
-            90% {
-                opacity: 1;
+            20% {
+                opacity: 1; /* Fade in faster */
+            }
+            80% {
+                opacity: 1; /* Stay visible */
             }
             100% {
-                transform: translateX(-100%) translateY(50vh) rotate(-20deg);
-                opacity: 0;
+                opacity: 0; /* Fade out faster */
             }
         }
     </style>
@@ -102,11 +114,11 @@
     <div class="stars" id="starfield"></div>
     <div class="scroll-text" id="text1">the fans have been waiting...</div>
     <div class="scroll-text" id="text2">695 days since the last episode of...</div>
-    <div class="scroll-text" id="text3">cosmic breakfast's return!</div>
-    <div class="scroll-text" id="text4">and now the wait is almost over!</div>
-  
-    <div class="scroll-text" id="text5">c o m i n g  s o o n . . .</div>
-
+    <div class="scroll-text" id="text3">COSMIC BREAKFAST</div>
+    <div class="scroll-text" id="text4">and now</div>
+    <div class="scroll-text" id="text5">the wait is almost over</div>
+    <div class="scroll-text" id="text6">new episode...</div>
+    <div class="scroll-text" id="text7">coming soon </div>
     <script>
         function createStars() {
             const starfield = document.getElementById('starfield');
